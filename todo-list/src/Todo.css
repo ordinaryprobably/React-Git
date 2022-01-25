@@ -1,0 +1,30 @@
+.Todo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Todo li {
+  width: 66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.EditForm {
+  display: flex;
+  justify-content: space-between;
+}
+
+.EditForm input {
+  width: 65%;
+}
+
+.EditForm button {
+  width: 30%;
+}
+
+.complete {
+  color: rgb(150, 150, 150);
+  text-decoration: line-through;
+  font-style: italic;
+}
