@@ -5,12 +5,16 @@ export default class Todo extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { isEditing: false, task: this.props.task, isComplete: false };
+    this.state = { 
+      isEditing: false, 
+      isComplete: false, 
+      task: this.props.task, 
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.toggleComplete = this.toggleComplete.bind(this);
     this.toggleEditForm = this.toggleEditForm.bind(this);
   }
 
@@ -29,7 +33,7 @@ export default class Todo extends Component {
     this.setState({ isEditing: false, task: '' });
   }
 
-  handleClick() {
+  toggleComplete() {
     this.setState({ isComplete: !this.state.isComplete });
   }
 
@@ -55,7 +59,7 @@ export default class Todo extends Component {
     } else {
       task = (
         <div className='Todo'>
-          <li className={this.state.isComplete ? "complete" : null} onClick={this.handleClick}>{this.props.task}</li>
+          <li className={this.state.isComplete ? "complete" : null} onClick={this.toggleComplete}>{this.props.task}</li>
           <div>
             <button onClick={this.toggleEditForm}>Edit</button>
             <button onClick={this.handleDelete}>Delete</button>
