@@ -1,0 +1,11 @@
+.Table div {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.Table button {
+  width: 150px;
+  height: 40px;
+  border-radius: 3px;
+}
