@@ -12,7 +12,7 @@ export default class JokeList extends Component {
     this.state = {
       jokeList: [],
       isLoading: true,
-    }
+    };
 
     this.updateVotes = this.updateVotes.bind(this);
   }
@@ -28,7 +28,7 @@ export default class JokeList extends Component {
           }
         });
 
-        if(data.status !== 200) throw new Error('API connection is unstable.')
+        if(data.status !== 200) throw new Error('API connection is unstable.');
   
         jokes.push({ joke: data.joke, id: data.id, vote: 0 });
       } catch(err) {
@@ -52,12 +52,12 @@ export default class JokeList extends Component {
       }
     })
 
-    // updatedList.sort((a, b) => b.vote - a.vote)
-
-    this.setState({ jokeList: updatedList })
+    this.setState({ jokeList: updatedList });
   }
 
   render() {
+    const jokes = this.state.jokeList.sort((a, b) => b.vote - a.vote);
+
     if(this.isLoading) {
       return (
         <div>
@@ -65,8 +65,6 @@ export default class JokeList extends Component {
         </div>
       )
     }
-
-    const jokes = this.state.jokeList.sort((a, b) => b.vote - a.vote);
     
     return (
       <div className="JokeList">
@@ -85,4 +83,3 @@ export default class JokeList extends Component {
     )
   }
 }
-// {this.state.isLoading ? 'now loading...' : jokes}
