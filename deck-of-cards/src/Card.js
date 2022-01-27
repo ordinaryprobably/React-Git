@@ -11,6 +11,7 @@ export default class Card extends Component {
 
     this._transform = `translate(${xAxis}px, ${yAxis}px) rotate(${angle}deg)`;
   }
+  
   render() {
     return (
       <img 
