@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Card from './Card';
+import { v4 as uuid } from 'uuid';
 import './Table.css';
 
 const API_BASE_URL = 'https://deckofcardsapi.com/api/deck';
@@ -45,7 +46,7 @@ export default class Table extends Component {
         <h1>{this.state.remaining}</h1>
         <button onClick={this.drawCard}>Draw</button>
         <div>
-          {this.state.cards.map(card => <Card src={card.imgUrl}/>)} 
+          {this.state.cards.map(card => <Card src={card.imgUrl} key={uuid()}/>)} 
         </div>
       </div>
     )
