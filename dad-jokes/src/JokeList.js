@@ -52,17 +52,17 @@ export default class JokeList extends Component {
       }
     })
 
+    updatedList.sort((a, b) => b.vote - a.vote);
+
     this.setState({ jokeList: updatedList });
   }
 
   render() {
-    const jokes = this.state.jokeList.sort((a, b) => b.vote - a.vote);
-
-    if(this.isLoading) {
+    if(this.state.isLoading) {
       return (
-        <div>
+        <h1>
           now loading...
-        </div>
+        </h1>
       )
     }
     
@@ -70,9 +70,10 @@ export default class JokeList extends Component {
       <div className="JokeList">
         <h1>Dad jokes!</h1>
         <ul>
-          {jokes.map(joke => 
+          {this.state.jokeList.map(joke => 
             <Joke 
               joke={joke.joke} 
+              key={joke.id}
               id={joke.id} 
               vote={joke.vote}
               updateVote={this.updateVotes}
