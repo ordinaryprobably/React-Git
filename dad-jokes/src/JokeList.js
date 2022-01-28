@@ -46,8 +46,11 @@ export default class JokeList extends Component {
       }
     }
 
-    this.setState(prev => ({ jokeList: jokes, isLoading: false }));
-    window.localStorage.setItem('jokes', JSON.stringify(jokes));
+    this.setState(
+      { jokeList: jokes, isLoading: false },
+      () => window.localStorage.setItem('jokes', JSON.stringify(jokes))
+    );
+    
   }
   
   requestNewJokes() {
@@ -70,8 +73,10 @@ export default class JokeList extends Component {
 
     updatedList.sort((a, b) => b.vote - a.vote);
 
-    this.setState({ jokeList: updatedList });
-    window.localStorage.setItem('jokes', JSON.stringify(updatedList));
+    this.setState(
+      { jokeList: updatedList }, 
+      () => window.localStorage.setItem('jokes', JSON.stringify(updatedList))
+    );
   }
 
   render() {
