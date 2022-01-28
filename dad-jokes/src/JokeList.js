@@ -10,14 +10,24 @@ export default class JokeList extends Component {
     super(props);
 
     this.state = {
-      jokeList: [],
+      jokeList: JSON.parse(window.localStorage.getItem('jokes') || '[]'),
       isLoading: true,
     };
 
     this.updateVotes = this.updateVotes.bind(this);
+    this.requestJokes = this.requestJokes.bind(this);
+    this.requestNewJokes = this.requestNewJokes.bind(this);
   }
 
   async componentDidMount() {
+    if(this.state.jokeList.length === 0) {
+      this.requestJokes();
+    } else {
+      this.setState({ isLoading: false })
+    }
+  }
+
+  async requestJokes() {
     const jokes = [];
 
     for(let i = 0; i < this.props.jokesNum; i++) {
@@ -35,8 +45,14 @@ export default class JokeList extends Component {
         alert(err);
       }
     }
-    
+
     this.setState(prev => ({ jokeList: jokes, isLoading: false }));
+    window.localStorage.setItem('jokes', JSON.stringify(jokes));
+  }
+  
+  requestNewJokes() {
+    window.localStorage.removeItem('jokes');
+    this.setState({ isLoading: true }, this.requestJokes);
   }
 
   updateVotes(id, condition) {
@@ -55,6 +71,7 @@ export default class JokeList extends Component {
     updatedList.sort((a, b) => b.vote - a.vote);
 
     this.setState({ jokeList: updatedList });
+    window.localStorage.setItem('jokes', JSON.stringify(updatedList));
   }
 
   render() {
@@ -69,6 +86,7 @@ export default class JokeList extends Component {
     return (
       <div className="JokeList">
         <h1>Dad jokes!</h1>
+        <button onClick={this.requestNewJokes}>Retrieve New Jokes!</button>
         <ul>
           {this.state.jokeList.map(joke => 
             <Joke 
