@@ -50,7 +50,6 @@ export default class JokeList extends Component {
       { jokeList: jokes, isLoading: false },
       () => window.localStorage.setItem('jokes', JSON.stringify(jokes))
     );
-    
   }
   
   requestNewJokes() {
