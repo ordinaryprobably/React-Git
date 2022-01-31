@@ -1,0 +1,21 @@
+.DogList {
+  display: flex;
+  flex-direction: column;
+}
+
+.DogList-dogs {
+  display: flex;
+}
+
+.DogList-dogs div {
+  margin: 10px 20px;
+  color: black;
+}
+
+.DogList-dogs div ul {
+  padding: 0;
+}
+
+.Link {
+  text-decoration: inherit;
+}

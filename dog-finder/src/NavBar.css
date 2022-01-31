@@ -1,0 +1,7 @@
+.NavLink {
+  padding: 15px;
+}
+
+.NavBar-active {
+  color: red;
+}
