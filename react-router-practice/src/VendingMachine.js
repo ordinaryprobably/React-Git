@@ -8,10 +8,17 @@ export default class VendingMachine extends Component {
     this.state = { query: '' };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
+  }
+
+  handleClick() {
+    alert('You will soon be redirected.')
+
+    this.props.history.push(`/food/${this.state.query}`)
   }
 
   render() {
@@ -24,6 +31,7 @@ export default class VendingMachine extends Component {
           value={this.state.value}
           onChange={this.handleChange}
         />
+        <button onClick={this.handleClick}>Visit</button>
         <Link to={`/food/${this.state.query}`}>Visit {this.state.query}</Link>
       </div>
     )

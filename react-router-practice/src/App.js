@@ -8,7 +8,7 @@ export default class App extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path='/' component={VendingMachine} />
+          <Route exact path='/' render={routerProps => <VendingMachine { ...routerProps } />} />
           <Route exact path='/food/:foodName' render={(routerProps) => <Food { ...routerProps } />} />
           <Route exact render={() => <h1>NOT FOUND</h1>} />
         </Switch>
