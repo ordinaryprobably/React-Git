@@ -1,17 +1,22 @@
 .NavBar {
   display: flex;
   align-items: center;
+  height: 5vh;
   background-color: rgb(244, 244, 244);
 }
 
 .logo {
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+  margin-left: 1rem;
   background-color: rgb(223, 247, 255);
 }
 
 .logo a {
   text-decoration: none;
-  color: black;
+  color: rgb(56, 175, 255);
   font-style: italic;
 }
 
