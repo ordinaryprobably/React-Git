@@ -2,22 +2,28 @@ import React, { Component } from "react";
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import './NavBar.css';
-import { MenuItem, Select } from "@material-ui/core";
+import { IconButton, MenuItem, Select, Snackbar } from "@material-ui/core";
+import CloseIcon from '@mui/icons-material/Close';
 
 export default class NavBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { colorFormat: 'hex' };
+    this.state = { colorFormat: 'hex', isSnackBarOpen: false };
 
     this.handleChange = this.handleChange.bind(this);
+    this.closeSnackbar = this.closeSnackbar.bind(this);
   }
 
   handleChange(event) {
     this.setState(
-      { colorFormat: event.target.value },
+      { colorFormat: event.target.value, isSnackBarOpen: true },
       () => this.props.changeFormat(this.state.colorFormat)
     );
+  }
+
+  closeSnackbar() {
+    this.setState({ isSnackBarOpen: false });
   }
 
   render() {
@@ -40,11 +46,29 @@ export default class NavBar extends Component {
             onAfterChange={this.props.changeLevel}
           />
         </div>
-        <Select value={this.state.colorFormat} onChange={this.handleChange}>
-          <MenuItem value="hex">Hex</MenuItem>
-          <MenuItem value="rgb">rgb</MenuItem>
-          <MenuItem value="rgba">rgba</MenuItem>
-        </Select>
+        <div className="select-container">
+          <span>Copy Colors in: </span>
+          <Select value={this.state.colorFormat} onChange={this.handleChange}>
+            <MenuItem value="hex">Hex</MenuItem>
+            <MenuItem value="rgb">rgb</MenuItem>
+            <MenuItem value="rgba">rgba</MenuItem>
+          </Select>
+        </div>
+        <Snackbar 
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+          open={this.state.isSnackBarOpen}
+          onClose={this.closeSnackbar}
+          autoHideDuration={3000}
+          message={<span>Color Format Changed to {this.state.colorFormat.toUpperCase()}</span>}
+          action={[
+            <IconButton 
+              color='inherit' 
+              onClick={this.closeSnackbar}
+              key='close'>
+              <CloseIcon />
+            </IconButton>
+          ]}
+        />
       </header>
     )
   }
