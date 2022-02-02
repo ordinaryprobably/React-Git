@@ -8,7 +8,7 @@ export default class ColorBox extends Component {
 
     this.state = {
       copied: false,
-    }
+    };
 
     this.changeCopyState = this.changeCopyState.bind(this);
   }
@@ -17,7 +17,7 @@ export default class ColorBox extends Component {
     this.setState(
       { copied: true }, 
       () => {
-        setTimeout(() => this.setState({ copied: false }), 1000)
+        setTimeout(() => this.setState({ copied: false }), 1000);
       })
   }
 
