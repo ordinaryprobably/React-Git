@@ -23,7 +23,7 @@ export default function generatePalette(starterPalette) {
         id: tag.name.toLowerCase().replace(/ /g, "-"),
         hex: scale[i],
         rgb: chroma(scale[i]).css(),
-        rgba: chroma(scale[i]).css().replace('rgba', 'rgb').replace(')', ',1.0)'),
+        rgba: chroma(scale[i]).css().replace('rgb', 'rgba').replace(')', ',1.0)'),
       })
     }
   }

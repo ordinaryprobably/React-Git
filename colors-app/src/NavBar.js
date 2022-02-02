@@ -1,9 +1,25 @@
 import React, { Component } from "react";
-import Slider, { Range } from 'rc-slider';
+import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import './NavBar.css';
+import { MenuItem, Select } from "@material-ui/core";
 
 export default class NavBar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { colorFormat: 'hex' };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState(
+      { colorFormat: event.target.value },
+      () => this.props.changeFormat(this.state.colorFormat)
+    );
+  }
+
   render() {
     const { level } = this.props;
 
@@ -24,6 +40,11 @@ export default class NavBar extends Component {
             onAfterChange={this.props.changeLevel}
           />
         </div>
+        <Select value={this.state.colorFormat} onChange={this.handleChange}>
+          <MenuItem value="hex">Hex</MenuItem>
+          <MenuItem value="rgb">rgb</MenuItem>
+          <MenuItem value="rgba">rgba</MenuItem>
+        </Select>
       </header>
     )
   }
