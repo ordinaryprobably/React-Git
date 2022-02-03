@@ -90,3 +90,11 @@
   z-index: 20;
   /* transition-delay: 0.2s; */
 }
+
+.light-text {
+  color: white;
+}
+
+.dark-text {
+  color: rgb(102, 102, 102);
+}
