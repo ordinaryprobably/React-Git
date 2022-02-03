@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ColorBox from './ColorBox';
 import Footer from './Footer';
 import NavBar from './NavBar';
@@ -39,14 +40,16 @@ class SingleColorPalette extends Component {
     ))
 
     return (
-      <div className='Palette'>
+      <div className='SingleColorPalette Palette'>
         <div className='Palette-navbar'>
           <NavBar 
             changeFormat={this.changeColorFormat}
             isShowingAllColors={false}
           />
         </div>
-        <div className='Palette-colors'>{ colorBoxes }</div>
+        <div className='Palette-colors'>
+          { colorBoxes }
+        </div>
         <Footer paletteName={this.props.palette.paletteName} emoji={this.props.palette.emoji} />
       </div>
     )
