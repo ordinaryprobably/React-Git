@@ -35,6 +35,7 @@ const styles = {
     alignItems: 'center',
     margin: '0',
     color: 'black',
+    letterSpacing: '1px',
     paddingTop: '0.5rem',
     position: 'relative',
     '& span': {
