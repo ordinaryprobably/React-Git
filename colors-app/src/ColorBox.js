@@ -23,7 +23,7 @@ export default class ColorBox extends Component {
   }
 
   render() {
-    const { background, name, moreUrl } = this.props;
+    const { background, name, urlToSingleColorPalette, showLink } = this.props;
     const { copied } = this.state;
 
     return (
@@ -40,9 +40,11 @@ export default class ColorBox extends Component {
             </div>
             <button className="copy-button">copy</button>
           </div>
-          <Link to={moreUrl} onClick={e => e.stopPropagation()}>
-            <span className="see-more">More</span>
-          </Link>
+          {showLink && 
+            <Link to={urlToSingleColorPalette} onClick={e => e.stopPropagation()}>
+              <span className="see-more">More</span>
+            </Link>
+          }
         </div>
       </CopyToClipboard>
     )
