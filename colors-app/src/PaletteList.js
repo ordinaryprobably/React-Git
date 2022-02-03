@@ -33,6 +33,10 @@ const styles = {
 }
 
 class PaletteList extends Component {
+  linkTo(id) {
+    this.props.history.push(`/palette/${id}`);
+  }
+
   render() {
     const { palette, classes } = this.props;
 
@@ -44,7 +48,7 @@ class PaletteList extends Component {
           </nav>
           <div className={classes.palettes}>
             {palette.map(palette => (
-              <MiniPalette {...palette} />
+              <MiniPalette {...palette} linkTo={() => this.linkTo(palette.id)} />
             ))}
           </div>
         </div>
