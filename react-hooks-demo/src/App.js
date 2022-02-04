@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import useInputHook from "./hooks/useInputHook";
 import useToggle from "./hooks/useToggle";
 
@@ -8,6 +8,10 @@ export default function App() {
   const [isBanana, toggleisBanana] = useToggle(false);
   const [nickname, updateNickname, resetNickname] = useInputHook('');
   const [age, updateAge, resetAge] = useInputHook('');
+
+  useEffect(() => {
+    setCount(count + 1);
+  }, [nickname])
 
   const resetAll = () => {
     resetNickname();
