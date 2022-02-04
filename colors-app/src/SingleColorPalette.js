@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import ColorBox from './ColorBox';
 import Footer from './Footer';
 import NavBar from './NavBar';
