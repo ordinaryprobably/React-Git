@@ -1,4 +1,4 @@
-import { Divider, List, ListItem, ListItemText, Paper } from "@mui/material";
+import { Divider, Paper } from "@mui/material";
 import Todo from "./Todo";
 
 export default function TodoList(props) {

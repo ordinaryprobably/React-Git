@@ -7,10 +7,6 @@ import TodoList from "./TodoList";
 export default function TodoApp() {
   const initTodos = JSON.parse(window.localStorage.getItem('todos') || '[]');
   const { todos, addTodo, deleteTodo, editTodo, toggleComplete } = useTodoApp(initTodos);
- 
-  useEffect(() => {
-    window.localStorage.setItem('todos', JSON.stringify(todos));
-  }, [todos]);
 
   return (
     <Paper
