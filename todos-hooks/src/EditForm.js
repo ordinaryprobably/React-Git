@@ -30,7 +30,13 @@ export default function EditForm(props) {
 
   return (
     <form onSubmit={submitEdit} style={{ width: '100%', border: 'none' }}>
-      <TextField value={value} onChange={handleChange} autoFocus style={{ width: '100%', border: 'none' }}/>
+      <TextField
+        value={value} 
+        onChange={handleChange} 
+        autoFocus 
+        style={{ width: '100%', border: 'none' }}
+        autoComplete="off"
+      />
       <div className={classes.buttonWrap}>
       <button className={classes.button}>submit</button>
       </div>

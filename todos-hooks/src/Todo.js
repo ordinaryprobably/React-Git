@@ -3,7 +3,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { useState } from "react";
 import EditForm from "./EditForm";
-import { ExpandMore } from "@mui/icons-material";
 
 export default function Todo(props) {
   const [isEditing, setIsEditing] = useState(false);

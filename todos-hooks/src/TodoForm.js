@@ -13,7 +13,15 @@ export default function TodoForm({ addTodo }) {
   return (
     <Paper style={{ margin: '1rem 0', padding: '1rem 1.5rem' }}>
       <form onSubmit={handleSubmit}>
-        <TextField value={value} onChange={handleChange} id="standard-basic" label="List your todos" variant="standard" style={{ width: '100%'}}/>
+        <TextField 
+          value={value} 
+          onChange={handleChange} 
+          id="standard-basic" 
+          label="List your todos" 
+          variant="standard" 
+          style={{ width: '100%'}}
+          autoComplete='off'
+        />
       </form>
     </Paper>
   )
