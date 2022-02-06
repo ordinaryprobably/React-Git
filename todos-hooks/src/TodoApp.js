@@ -1,6 +1,4 @@
 import { AppBar, Grid, Paper, Toolbar, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
-import useTodoApp from './hooks/useTodoApp';
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 import { TodosProvider } from "./contexts/todos.context";
