@@ -8278,6 +8278,7 @@
     "text-table" "0.2.0"
 
 "react-dom@^16.3.0", "react-dom@^16.8.6", "react-dom@>=15.0.0":
+  "integrity" "sha512-1nL7PIq9LTL3fthPqwkvr2zY7phIPjYrT0jp4HjyEQrEROnw4dG41VVwi/wfoCneoleqrNX7iAD+pXebJZwrwA=="
   "version" "16.8.6"
   dependencies:
     "loose-envify" "^1.1.0"
@@ -8310,6 +8311,7 @@
   "version" "3.0.4"
 
 "react-scripts@2.1.8":
+  "integrity" "sha512-mDC8fYWCyuB9VROti8OCPdHE79UEchVVZmuS/yaIs47VkvZpgZqUvzghYBswZRchqnW0aARNY8xXrzoFRhhK7A=="
   "resolved" "https://registry.npmjs.org/react-scripts/-/react-scripts-2.1.8.tgz"
   "version" "2.1.8"
   dependencies:
@@ -8373,6 +8375,7 @@
     "react-lifecycles-compat" "^3.0.4"
 
 "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^16.0.0", "react@^16.3.0", "react@^16.8.6", "react@>=15.0.0":
+  "integrity" "sha512-pC0uMkhLaHm11ZSJULfOBqV4tIZkx87ZLvbbQYunNixAAvjnC+snJCg0XQXn9VIsttVsbZP/H/ewzgsd5fxKXw=="
   "version" "16.8.6"
   dependencies:
     "loose-envify" "^1.1.0"

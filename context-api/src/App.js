@@ -1,17 +1,12 @@
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Navbar from "./Navbar";
-import { StyledEngineProvider } from "@mui/material/styles";
- 
-const defaultTheme = createTheme();
- 
-function App() {
-  return (
-    <ThemeProvider theme={defaultTheme}>
-      <StyledEngineProvider injectFirst>
-        <Navbar />
-      </StyledEngineProvider>
-    </ThemeProvider>
-  );
+import React, { Component } from 'react';
+import Form from './Form';
+import Navbar from './Navbar';
+
+export default class App extends Component {
+  render() {
+    <>
+      <Navbar />
+      <Form />
+    </>
+  }
 }
- 
-export default App;
