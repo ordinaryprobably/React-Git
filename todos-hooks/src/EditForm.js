@@ -1,5 +1,7 @@
 import { TextField } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { useContext } from "react";
+import { TodosContext } from "./contexts/todos.context";
 import useInput from "./hooks/useInput";
 
 const useStyles = makeStyles({
@@ -17,13 +19,14 @@ const useStyles = makeStyles({
 
 export default function EditForm(props) {
   const [value, handleChange, reset] = useInput('');
-  const { id, edit, foldAccordion } = props;
+  const { id, foldAccordion } = props;
+  const { editTodo } = useContext(TodosContext);
   const classes = useStyles();
 
   const submitEdit = (event) => {
     event.preventDefault();
 
-    edit(id, value);
+    editTodo(id, value);
     reset();
     foldAccordion();
   }

@@ -1,13 +1,15 @@
 import { Accordion, AccordionDetails, AccordionSummary, Checkbox, IconButton, ListItem, ListItemSecondaryAction, ListItemText, Typography } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import EditForm from "./EditForm";
+import { TodosContext } from "./contexts/todos.context";
 
 export default function Todo(props) {
   const [isEditing, setIsEditing] = useState(false);
   const [expand, setExpand] = useState(false);
-  const { todo, edit, deleteTodo, checkComplete } = props;
+  const { todo } = props;
+  const { deleteTodo, toggleComplete } = useContext(TodosContext);
 
   const toggleEditForm = () => {
     setExpand((prev) => !prev);
@@ -22,7 +24,7 @@ export default function Todo(props) {
     <Accordion expanded={expand} >
       <AccordionSummary>
         <ListItem>
-          <Checkbox checked={todo.completed} onChange={() => checkComplete(todo.id, todo.completed)}/>
+          <Checkbox checked={todo.completed} onChange={() => toggleComplete(todo.id, todo.completed)}/>
           <ListItemText>{todo.task}</ListItemText>
           <IconButton  aria-label="Edit" onClick={toggleEditForm}>
             <EditIcon />
@@ -34,31 +36,9 @@ export default function Todo(props) {
       </AccordionSummary>
       <AccordionDetails>
         <ListItem>
-          <EditForm id={todo.id} edit={edit} foldAccordion={handleEditSubmit}/>
+          <EditForm id={todo.id} foldAccordion={handleEditSubmit}/>
         </ListItem>
       </AccordionDetails>
     </Accordion>
   )
 }
-
-{/* <Accordion>
-<AccordionSummary>
-  <ListItem>
-    <Checkbox checked={todo.completed} onChange={() => checkComplete(todo.id, todo.completed)}/>
-    <ListItemText style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
-      {todo.task}
-    </ListItemText>
-    <ListItemSecondaryAction>
-      <IconButton aria-label="Edit" onClick={toggleEditForm}  >
-        <EditIcon />
-      </IconButton>
-      <IconButton aria-label="Delete" onClick={() => deleteTodo(todo.id)}>
-        <DeleteIcon />
-      </IconButton>
-    </ListItemSecondaryAction>
-  </ListItem>
-</AccordionSummary>
-<AccordionDetails>
-  <EditForm id={todo.id} edit={edit} toggleEditForm={toggleEditForm}/>
-</AccordionDetails>
-</Accordion> */}

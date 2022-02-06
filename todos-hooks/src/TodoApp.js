@@ -3,11 +3,9 @@ import { useEffect, useState } from "react";
 import useTodoApp from './hooks/useTodoApp';
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
+import { TodosProvider } from "./contexts/todos.context";
 
 export default function TodoApp() {
-  const initTodos = JSON.parse(window.localStorage.getItem('todos') || '[]');
-  const { todos, addTodo, deleteTodo, editTodo, toggleComplete } = useTodoApp(initTodos);
-
   return (
     <Paper
       style={{
@@ -25,13 +23,10 @@ export default function TodoApp() {
       </AppBar>
       <Grid container justifyContent='center'>
         <Grid item lg={4} md={8} xs={12}>
-          <TodoForm addTodo={addTodo}/>
-          <TodoList 
-            todos={todos} 
-            deleteTodo={deleteTodo} 
-            edit={editTodo}
-            checkComplete={toggleComplete}
-          />
+          <TodosProvider>
+            <TodoForm />
+            <TodoList />
+          </TodosProvider>
         </Grid>
       </Grid>
     </Paper>
