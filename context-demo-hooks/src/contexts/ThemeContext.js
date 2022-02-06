@@ -1,34 +1,15 @@
-/**
- * ThemeContext = restaurant
- * ThemeProvider = server
- * this.state in ThemeProvider = meal
- * contextType = plate 
- * this.context = fork
- */
-
-import React, { Component, createContext } from "react";
+import React, { createContext } from "react";
+import useToggle from "../hooks/useToggle";
 
 export const ThemeContext = createContext();
 
-export class ThemeProvider extends Component {
-  constructor(props) {
-    super(props);
+export function ThemeProvider(props) {
+  const [isDarkMode, toggleIsDarkMode] = useToggle(false);
 
-    this.state = {
-      isDarkMode: true
-    }
-    this.toggleTheme = this.toggleTheme.bind(this);
-  }
+  return (
+    <ThemeContext.Provider value={{ isDarkMode, toggleIsDarkMode }}>
+      {props.children}
+    </ThemeContext.Provider>
+  )
 
-  toggleTheme() {
-    this.setState({isDarkMode: !this.state.isDarkMode});
-  }
-
-  render() {
-    return (
-      <ThemeContext.Provider value={{ ...this.state, toggleTheme: this.toggleTheme }}>
-        {this.props.children}
-      </ThemeContext.Provider>
-    )
-  }
 }
