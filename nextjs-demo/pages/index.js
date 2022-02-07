@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default function Home({ posts }) {
+export default function Index({ posts }) {
   return (
     <div>
       <h1>HI intaek!</h1>
@@ -27,7 +27,7 @@ export default function Home({ posts }) {
  * (Home 의 props 로 넣어준다.)
  */
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
   const posts = await res.json();
 
