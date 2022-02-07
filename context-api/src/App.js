@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
-import Form from './Form';
-import Navbar from './Navbar';
+import Form from "./Form";
 
-export default class App extends Component {
-  render() {
+export default function App() {
+  return (
     <>
-      <Navbar />
-      <Form />
+      <Form/>
     </>
-  }
+  )
 }

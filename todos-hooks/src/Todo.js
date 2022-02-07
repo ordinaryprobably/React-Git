@@ -10,6 +10,7 @@ function Todo(props) {
   const [expand, setExpand] = useState(false);
   const { todo } = props;
   const dispatch = useContext(DispatchContext);
+  
   const toggleEditForm = () => {
     setExpand((prev) => !prev);
     setIsEditing(!isEditing);

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default initialValue => {
+export default (initialValue, ref) => {
   const [value, setValue] = useState(initialValue);
   
   const handleChange = (event => {
