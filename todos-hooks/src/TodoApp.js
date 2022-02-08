@@ -3,17 +3,16 @@ import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 import { TodosProvider } from "./contexts/todos.context";
 
+const styles = {
+  padding: 0,
+  margin:0,
+  height: '100vh',
+  backgroundColor: '#fafafa'
+}
+
 export default function TodoApp() {
   return (
-    <Paper
-      style={{
-        padding: 0,
-        margin:0,
-        height: '100vh',
-        backgroundColor: '#fafafa'
-      }}
-      elevation={0}
-      >
+    <Paper style={styles} elevation={0}>
       <AppBar color="primary" position="static">
         <Toolbar>
           <Typography>TODOS WITH HOOKS</Typography>
