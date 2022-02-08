@@ -1,0 +1,50 @@
+{
+  "data": {
+    "댕댕이": [
+      { 
+        "id": "1", 
+        "meaning": "가나다라 암바사 기니디리르 망부 석스 앙나내.",
+        "votes": "31", 
+        "comments": [
+          { 
+            "userId": "qwert12345",
+            "comment": "this is not good very good.",
+            "date": "2004 Dec 12 12:23:04"
+          }
+        ]
+      },
+      { 
+        "id": "2", 
+        "meaning": " 댕댕이는 이 말 로로롤",
+        "votes": "21", 
+        "comments": [
+          { 
+            "userId": "qwert12345",
+            "comment": "this is not good very good.",
+            "date": "2004 Dec 12 12:23:04"
+          }
+        ]
+      }      
+    ],
+    "파이썬": [
+      {
+        "id": "1",
+        "meaning": "파이썬은 이전동의 이사를 갑니다",
+        "comments": []
+      }
+    ],
+    "안뇽": [
+      {
+        "id": "1",
+        "meaning": "안뇽 이라는 말 한적 없스인다",
+        "comments": [
+          { 
+            "userId": "qwert12345",
+            "comment": "this is not good very good.",
+            "date": "2004 Dec 12 12:23:04"
+          }
+        ]
+      }
+    ]    
+  }
+}
