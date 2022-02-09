@@ -1,14 +1,24 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import Header from '../Components/Layout/Header'
 import HomeWordList from '../Components/Words/HomeWordList'
-import styles from '../styles/Home.module.css'
+import fs from 'fs'
 
-export default function Home() {
+export default function Home({ words }) {
+  const { data } = JSON.parse(words);
+  console.log(data)
   return (
     <>
       <Header />
-      <HomeWordList />
+      <HomeWordList words={data} />
     </>
   )
+}
+
+export async function getStaticProps() {
+  const words = fs.readFileSync('data/data.json','utf8')
+
+  return { 
+    props: {
+      words
+    }
+  }
 }

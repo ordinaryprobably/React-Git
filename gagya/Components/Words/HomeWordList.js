@@ -1,22 +1,17 @@
-import { getData } from "../../lib/data";
 import WordSummary from "./WordSummary";
-import path from 'path';
 
-export default function HomeWordList({filenames}) {
-  console.log('data', filenames)
+export default function HomeWordList({ words }) {
+  const wordList = [];
+
+  for(let word of words) {
+    for(let wordInfo of word.info) {
+      wordList.push(<WordSummary word={wordInfo} />)
+    }
+  }
+
   return (
     <>
-      <WordSummary />
+      {wordList}
     </>
   )
-}
-
-export async function getStaticProps() {
-  const directory = path.join(process.cwd(), 'data');
-  const filenames = await fs.readdir(directory);
-
-
-  return { 
-    props: { filenames }
-  }
 }

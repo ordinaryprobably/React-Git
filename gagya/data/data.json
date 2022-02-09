@@ -1,50 +1,78 @@
 {
-  "data": {
-    "댕댕이": [
-      { 
-        "id": "1", 
-        "meaning": "가나다라 암바사 기니디리르 망부 석스 앙나내.",
-        "votes": "31", 
-        "comments": [
-          { 
-            "userId": "qwert12345",
-            "comment": "this is not good very good.",
-            "date": "2004 Dec 12 12:23:04"
-          }
-        ]
-      },
-      { 
-        "id": "2", 
-        "meaning": " 댕댕이는 이 말 로로롤",
-        "votes": "21", 
-        "comments": [
-          { 
-            "userId": "qwert12345",
-            "comment": "this is not good very good.",
-            "date": "2004 Dec 12 12:23:04"
-          }
-        ]
-      }      
-    ],
-    "파이썬": [
-      {
-        "id": "1",
-        "meaning": "파이썬은 이전동의 이사를 갑니다",
-        "comments": []
-      }
-    ],
-    "안뇽": [
-      {
-        "id": "1",
-        "meaning": "안뇽 이라는 말 한적 없스인다",
-        "comments": [
-          { 
-            "userId": "qwert12345",
-            "comment": "this is not good very good.",
-            "date": "2004 Dec 12 12:23:04"
-          }
-        ]
-      }
-    ]    
-  }
+  "data": [
+    {
+      "word": "댕댕이",
+      "info": [
+        { 
+          "title": "댕댕이",
+          "id": "1", 
+          "meaning": "가나다라 암바사 기니디리르 망부 석스 앙나내.",
+          "votes": "31", 
+          "comments": [
+            { 
+              "userId": "qwert12345",
+              "comment": "this is not good very good.",
+              "date": "2004 Dec 12 12:23:04"
+            }
+          ]
+        },
+        { 
+          "title": "댕댕이",
+          "id": "2", 
+          "meaning": " 댕댕이는 이 말 로로롤",
+          "votes": "21", 
+          "comments": [
+            { 
+              "userId": "qwert12345",
+              "comment": "this is not good very good.",
+              "date": "2004 Dec 12 12:23:04"
+            }
+          ]
+        },
+        { 
+          "title": "댕댕이",
+          "id": "3", 
+          "meaning": "가나다라 의 나무 속 어린 아이가 먼저의 속도 속 빛나던 우리들. 거짓부렁의 아저씨 오랑우탄.",
+          "votes": "55", 
+          "comments": [
+            { 
+              "userId": "qwert12345",
+              "comment": "this is not good very good.",
+              "date": "2004 Dec 12 12:23:04"
+            }
+          ]
+        }           
+      ]
+    },
+    {
+      "word": "파이썬",
+      "info": [
+        {
+          "title": "파이썬",
+          "id": "1",
+          "meaning": "파이썬은 이전동의 이사를 갑니다",
+          "votes": "0", 
+          "comments": []
+        }
+      ]
+    },
+    {
+      "word": "안뇽",
+      "info": [
+        {
+          "title": "안뇽",
+          "id": "1",
+          "meaning": "안뇽 이라는 말 한적 없스인다",
+          "votes": "-4", 
+          "comments": [
+            { 
+              "userId": "qwert12345",
+              "comment": "this is not good very good.",
+              "date": "2004 Dec 12 12:23:04"
+            }
+          ]
+        }
+      ]
+    }    
+  ]
 }
