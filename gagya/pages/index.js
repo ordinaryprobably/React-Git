@@ -4,7 +4,7 @@ import fs from 'fs'
 
 export default function Home({ words }) {
   const { data } = JSON.parse(words);
-  console.log(data)
+
   return (
     <>
       <Header />
